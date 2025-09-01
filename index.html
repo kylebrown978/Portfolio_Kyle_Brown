@@ -1,7 +1,124 @@
----
-# You don't need to edit this file, it's empty on purpose.
-# Edit theme's home layout instead if you wanna make some changes
-# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-layout: home
-author_profile: true
----
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kyle Brown — Aerospace Portfolio</title>
+<meta name="description" content="UAV systems, propulsion, CAD design, and mission design.">
+<style>
+  :root{--max:80rem;--pad:clamp(16px,3vw,28px);--radius:14px;
+        --ink:#0b0f1a;--muted:#667085;--accent:#0b3d91;--accent2:#1a73e8}
+  *{box-sizing:border-box} body{margin:0;font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink)}
+  a{color:inherit;text-decoration-thickness:.12em;text-underline-offset:.2em}
+  img{max-width:100%;height:auto;display:block;border-radius:var(--radius)}
+  /* Hero */
+  header{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff}
+  .wrap{max-width:var(--max);margin:0 auto;padding:var(--pad)}
+  .nav{display:flex;gap:16px;align-items:center;justify-content:flex-end;flex-wrap:wrap}
+  .nav .logo{margin-right:auto;font-weight:800}
+  .cta{border:2px solid #fff;padding:8px 14px;border-radius:999px}
+  h1{font-size:clamp(32px,5vw,56px);margin:22px 0 10px}
+  .tag{display:inline-block;font-size:12px;padding:6px 10px;border:1px solid rgba(255,255,255,.4);border-radius:999px;margin:6px 6px 0 0}
+  /* Sections */
+  section h2{margin:0 0 10px;font-size:clamp(20px,2.4vw,28px)}
+  .grid{display:grid;gap:28px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+  .card{padding:18px;border:1px solid #e8e8e8;border-radius:var(--radius);background:#fff;box-shadow:0 1px 0 rgba(0,0,0,.04)}
+  .two{display:grid;grid-template-columns:1.3fr 1fr;gap:24px}
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
+  .btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+  .btn{display:inline-block;padding:10px 14px;border:1px solid #dcdcdc;border-radius:9px;background:#fff;text-decoration:none}
+  .primary{border-color:var(--accent)}
+  .muted{color:var(--muted)}
+  footer{border-top:1px solid #eee;margin-top:40px;padding:var(--pad);text-align:center}
+  @media (max-width:900px){.two{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav class="nav">
+      <a class="logo" href="/">Kyle Brown</a>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a class="cta" href="mailto:Kylebrown978@yahoo.com">Contact</a>
+    </nav>
+    <h1>Kyle Brown</h1>
+    <p>UAV systems • Propulsion • CAD design • Mission design</p>
+    <div>
+      <span class="tag">SolidWorks</span>
+      <span class="tag">C++ / MATLAB</span>
+      <span class="tag">LiDAR / IMU</span>
+      <span class="tag">Propulsion trades</span>
+    </div>
+  </div>
+</header>
+
+<section id="projects" class="wrap">
+  <h2>Featured Projects</h2>
+  <p class="muted">Impact-focused write-ups with visuals and links to full documentation.</p>
+
+  <!-- Autonomous Drone -->
+  <div class="card two">
+    <div>
+      <img src="drone_cad.png" alt="Autonomous Drone CAD">
+      <div class="gallery">
+        <img src="drones_line.jpeg" alt="MAV lineup">
+        <img src="drone_build.jpeg" alt="Electronics bench build">
+        <img src="drone_cad.png" alt="Drone CAD detail">
+      </div>
+    </div>
+    <div>
+      <h3>Autonomous Drone (MAV)</h3>
+      <p><strong>Role:</strong> Controls & Electronics, CAD, propulsion integration</p>
+      <p>Modeled the airframe and avionics in CAD, selected and integrated propulsion (motors/ESC/props), and implemented sensing & control (IMU + LiDAR; PD outer loop with waypoint sequencing).</p>
+      <ul>
+        <li><strong>CAD & integration:</strong> frame, avionics bay, sensor mounts.</li>
+        <li><strong>Propulsion:</strong> motor/prop/ESC sizing, power distribution, thrust vs. endurance trades.</li>
+        <li><strong>Coding:</strong> PD control, waypoint logic, telemetry + MATLAB analysis.</li>
+      </ul>
+      <div class="btnrow">
+        <a class="btn primary" href="Autonomous_Drone_Report.pdf">Project report (PDF)</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAYFLY Mission -->
+  <div class="card two" style="margin-top:24px">
+    <div>
+      <img src="mayfly_cad.png" alt="MAYFLY spacecraft CAD">
+    </div>
+    <div>
+      <h3>MAYFLY — Comet Sample Return</h3>
+      <p><strong>Role:</strong> Payload/bus CAD support, propulsion & trajectory trades, analysis scripts</p>
+      <p>Contributed spacecraft CAD (bus + payload interface), assisted SEP vs. chemical propulsion trade studies and power budgets, and wrote helper scripts for trajectory and margin sweeps to support reviews.</p>
+      <ul>
+        <li><strong>CAD:</strong> modeled payload bay and interfaces.</li>
+        <li><strong>Propulsion:</strong> SEP/chemical trades linking power, mass, and schedule.</li>
+        <li><strong>Coding:</strong> trajectory + mass/power margin scripts.</li>
+      </ul>
+      <div class="btnrow">
+        <a class="btn primary" href="Mayfly_Sample_Return_Report.pdf">Mission report (PDF)</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="wrap">
+  <h2>About</h2>
+  <div class="card">
+    <p>I like building the full stack: CAD & manufacturing, propulsion decisions, and control software. Recent work includes an autonomous micro-air vehicle and MAYFLY, a comet sample-return concept.</p>
+    <div class="btnrow">
+      <a class="btn" href="Kyle_Brown_Resume.pdf">Download Résumé</a>
+      <a class="btn" href="https://www.linkedin.com/in/kyle-v-brown">LinkedIn</a>
+      <a class="btn" href="mailto:Kylebrown978@yahoo.com">Email</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© <span id="y"></span> Kyle Brown · <a href="mailto:Kylebrown978@yahoo.com">Email</a> · <a href="https://www.linkedin.com/in/kyle-v-brown">LinkedIn</a></p>
+</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
